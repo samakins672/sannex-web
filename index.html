@@ -25,6 +25,8 @@
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <!-- favicons
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -61,20 +63,23 @@
                     </h1>
 
                     <p>
-                        At Sannex, we create smart and creative web solutions that help businesses achieve their goals. We are a team of
-                        experienced and passionate web professionals who are committed to providing our clients with the best possible service.
+                        At Sannex, we create smart and creative web solutions that help businesses achieve their goals.
+                        We are a team of
+                        experienced and passionate web professionals who are committed to providing our clients with the
+                        best possible service.
                     </p>
-                    
+
                     <p>
-                        If you are looking for a web solution that will help you grow your business, then Sannex is the perfect partner for you.
-                        We would be honored to discuss your needs and help you create a website that will help you achieve your goals.
+                        If you are looking for a web solution that will help you grow your business, then Sannex is the
+                        perfect partner for you.
+                        We would be honored to discuss your needs and help you create a website that will help you
+                        achieve your goals.
                     </p>
 
                     <div class="home-content__subscribe">
                         <form id="mc-form" class="group" novalidate="true">
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email"
-                                placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="Notify Me">
+                            <input type="email" id="mc-email" placeholder="Email Address" required="">
+                            <input type="button" name="subscribe" value="Notify Me" onclick="sendEmail()">
                             <label for="mc-email" class="subscribe-message"></label>
                         </form>
                     </div>
@@ -109,11 +114,11 @@
 
             <ul class="home-social">
                 <li>
-                    <a href="github.com/sannex-01"><i class="fab fa-github" aria-hidden="true"></i>
+                    <a href="https://github.com/sannex-01"><i class="fab fa-github" aria-hidden="true"></i>
                         <span>Github</span></a>
                 </li>
                 <li>
-                    <a href="wa.me/+2347048706198"><i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <a href="https://wa.me/+2347048706198"><i class="fab fa-whatsapp" aria-hidden="true"></i>
                         <span>WhatsApp</span></a>
                 </li>
             </ul> <!-- end home-social -->
@@ -144,15 +149,29 @@
             <div class="col-seven tab-full info-main">
                 <h1>We are Sannex. We make awesome stuff.</h1>
                 <p>
-                    At Sannex, we create smart and creative web solutions that help businesses achieve their goals. We are a team of
-                    experienced and passionate web professionals who are committed to providing our clients with the best possible service.
+                    At Sannex, we create smart and creative web solutions that help businesses achieve their goals. We
+                    are a team of
+                    experienced and passionate web professionals who are committed to providing our clients with the
+                    best possible service.
                 </p>
 
                 <p>
-                    If you are looking for a web solution that will help you grow your business, then Sannex is the perfect partner for you.
-                    We would be honored to discuss your needs and help you create a website that will help you achieve your goals. <br><br><br>
+                    If you are looking for a web solution that will help you grow your business, then Sannex is the
+                    perfect partner for you.
+                    We would be honored to discuss your needs and help you create a website that will help you achieve
+                    your goals. <br><br><br>
                 </p>
+
+                <div class="home-content__subscribe">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email"
+                            placeholder="Email Address" required="">
+                        <input type="submit" name="subscribe" value="Notify Me">
+                        <label for="mc-email" class="subscribe-message"></label>
+                    </form>
+                </div>
             </div>
+
 
             <div class="col-four tab-full pull-right info-contact">
 
@@ -178,11 +197,11 @@
 
                     <ul class="info-social">
                         <li>
-                            <a href="github.com/sannex-01"><i class="fab fa-github" aria-hidden="true"></i>
+                            <a href="https://github.com/sannex-01"><i class="fab fa-github" aria-hidden="true"></i>
                                 <span>Github</span></a>
                         </li>
                         <li>
-                            <a href="wa.me/+2347048706198"><i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <a href="https://wa.me/+2347048706198"><i class="fab fa-whatsapp" aria-hidden="true"></i>
                                 <span>WhatsApp</span></a>
                         </li>
                     </ul>
@@ -215,6 +234,25 @@
     <script src="js/plugins.js"></script>
     <script src="js/polygons.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        function sendEmail() {
+            to = document.getElementById('mc-email').value;
+
+            Email.send({
+                Host: "twentythree.qservers.net",
+                Username: "info@sannex.ng",
+                Password: "Sannex.info1",
+                To: to,
+                From: "info@sannex.ng",
+                Subject: "Sending Email using javascript",
+                Body: "Well that was easy!!",
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }
+    </script>
 
 </body>
 

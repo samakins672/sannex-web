@@ -1,9 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-set_error_handler("var_dump");
-
 require 'vendor/PHPMailer-master/src/PHPMailer.php';
 require 'vendor/PHPMailer-master/src/SMTP.php';
 require 'vendor/PHPMailer-master/src/Exception.php';

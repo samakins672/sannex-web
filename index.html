@@ -222,9 +222,8 @@
 
     <script type="text/javascript">
         function sendEmail(id) {
-            email = $("#mc-email"+id).val();
             var data = {
-                email: $("#mc-email"+id).val()
+                mail: $("#mc-email"+id).val()
             };
             $.ajax({
                 type: "POST",

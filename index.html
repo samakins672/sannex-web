@@ -63,10 +63,11 @@
                     </h1>
 
                     <div class="home-content__subscribe">
-                        <form action="mail.php" method="post" class="group" novalidate="true">
-                            <input type="email" name="mail" placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="Notify Me">
-                        </form>
+                        <form id="mc-form" class="group" novalidate="true">
+                            <input type="email" id="mc-email2" placeholder="Email Address" required="">
+                            <input type="button" name="subscribe" value="Notify Me" onclick="sendEmail(2)">
+                            <label for="mc-email" class="subscribe-message"></label>
+                        </form> 
                     </div>
                 </div> <!-- end home-content__text -->
 

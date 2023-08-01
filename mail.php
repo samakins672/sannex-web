@@ -4,9 +4,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 set_error_handler("var_dump");
 
-require 'vendor\PHPMailer-master\src\PHPMailer.php';
-require 'vendor\PHPMailer-master\src\SMTP.php';
-require 'vendor\PHPMailer-master\src\Exception.php';
+require 'vendor/PHPMailer-master/src/PHPMailer.php';
+require 'vendor/PHPMailer-master/src/SMTP.php';
+require 'vendor/PHPMailer-master/src/Exception.php';
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function

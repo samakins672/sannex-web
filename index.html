@@ -232,8 +232,8 @@
                 success: function (data) {
                     alert(data);
                 },
-                error: function () {
-                    alert('There was some error performing the AJAX call!');
+                error: function (data) {
+                    alert('There was some error performing the AJAX call!'.data);
                 }
             });
         }

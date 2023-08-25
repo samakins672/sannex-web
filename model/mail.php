@@ -3,6 +3,7 @@
 require 'vendor/PHPMailer-master/src/PHPMailer.php';
 require 'vendor/PHPMailer-master/src/SMTP.php';
 require 'vendor/PHPMailer-master/src/Exception.php';
+require 'mail_config.php';
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -17,14 +18,14 @@ $from = $_POST['mail'];
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_OFF; //Disable verbose debug output
     $mail->isSMTP(); //Send using SMTP
-    $mail->Host = 'twentythree.qservers.net'; //Set the SMTP server to send through
+    $mail->Host = SMTP_HOST; //Set the SMTP server to send through
     $mail->SMTPAuth = true; //Enable SMTP authentication
-    $mail->Username = 'info@sannex.ng'; //SMTP username
-    $mail->Password = 'Sannex.info1'; //SMTP password
+    $mail->Username = SMTP_USERNAME; //SMTP username
+    $mail->Password = SMTP_PASSWORD; //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
-    $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port = SMTP_PORT; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom("$from", 'Sucbscriber_');

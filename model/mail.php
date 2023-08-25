@@ -1,8 +1,8 @@
 <?php
 
-require 'vendor/PHPMailer-master/src/PHPMailer.php';
-require 'vendor/PHPMailer-master/src/SMTP.php';
-require 'vendor/PHPMailer-master/src/Exception.php';
+require '../vendor/PHPMailer-master/src/PHPMailer.php';
+require '../vendor/PHPMailer-master/src/SMTP.php';
+require '../vendor/PHPMailer-master/src/Exception.php';
 require 'mail_config.php';
 
 //Import PHPMailer classes into the global namespace
